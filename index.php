@@ -9,17 +9,16 @@
 <body>
     <h1>php below</h1>
     <?php 
-    $db_host = 'localhost';
-    $db_user = 'root';
-    $db_password = 'password';
-    $db_port = '3306';
-    $db_name = 'joyPHP';
+     $server = 'sql311.epizy.com';
+     $username = 'epiz_28254681';
+     $password = 'NBt5QpJBNf';
+     $dbname = 'epiz_28254681_samUsedCars';
     
-    $conn = mysql_connect($db_host, $db_user, $db_password)
+    $conn = mysql_connect($server, $username, $password)
         or die('Error connecting to mysql');
     
     //$db_name = 'epub';
-    mysql_select_db($db_name);
+    mysql_select_db($dbname);
 
 
     

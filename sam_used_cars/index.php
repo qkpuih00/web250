@@ -11,7 +11,7 @@
 <div id="header"><h1>Sam Used Cars</h1></div>
     <?php require_once 'process.php'; ?>
     <?php 
-        $mysqli = new mysqli('localhost', 'root', '', 'cars2') or die(mysql_error($mysqli));
+        $mysqli = new mysqli($server, $username, $password, $dbname) or die(mysql_error($mysqli));
         $result = $mysqli->query("SELECT * FROM inventory");
     ?>
 
