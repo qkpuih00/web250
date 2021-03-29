@@ -50,6 +50,15 @@
                 </tr>
             </thead>
 
+            <?php if(isset($_SESSION['message'])): ?>
+            <div>
+                <?php
+                    echo $_SESSION['message'];
+                ?>
+            </div>
+            <?php endif ?>
+
+
         <?php 
         while ($row = $result->fetch_assoc()):
         ?>

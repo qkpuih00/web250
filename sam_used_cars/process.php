@@ -1,5 +1,7 @@
 <?php 
 
+    session_start();
+
     $server = 'sql311.epizy.com';
     $username = 'epiz_28254681';
     $password = 'NBt5QpJBNf';
@@ -13,6 +15,10 @@
     $year = '';
     $asking_price = '';
 
+    function backToIndex() {
+        header('location: index.php');
+    }
+
     if(isset($_POST['save'])) {
         $vin = $_POST['vin'];
         $make = $_POST['make'];
@@ -23,13 +29,18 @@
         $mysqli->query("INSERT INTO inventory (vin, make, model, year, asking_price) VALUES ('$vin', '$make', '$model', '$year', '$askingPrice')") 
         or die ($mysqli->error());
 
+        $_SESSION['message'] = "Record has been saved!";
 
+        backToIndex();
     }
 
     if(isset($_GET['delete'])) {
         $vin = $_GET['delete'];
         $mysqli->query("DELETE FROM inventory WHERE vin = $vin") 
         or die($mysqli->error());
+
+        $_SESSION['message'] = "Record has been deleted!";
+        backToIndex();
     }
 
     if(isset($_GET['edit'])) {
@@ -58,7 +69,8 @@
                 asking_price='$asking_price' WHERE vin = '$vin'")
                 or die($mysqli->error());
         
-                header('location: index.php');
+                $_SESSION['message'] = "Record has been updated!";
+                backToIndex();
             }
     }
     
