@@ -8,7 +8,10 @@
     <title>Sam Used Cars Crud page</title>
 </head>
 <body>
-<div id="header"><h1>Sam Used Cars</h1></div>
+<div id="header"><h1>Sam Used Cars test</h1>
+<a href="../index.html">Back to Home Page</a>
+</div>
+
     <?php require_once 'process.php'; ?>
     <?php 
         $mysqli = new mysqli($server, $username, $password, $dbname) or die(mysql_error($mysqli));
@@ -62,5 +65,9 @@
         <?php endwhile;?>
         </table>
     </div>
+    <footer>
+        <div data-include="../components/footer.html"></div>
+    </footer>
+    <script src="../scripts/htmlinclude.js"></script>
 </body>
 </html>
