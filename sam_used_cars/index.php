@@ -8,12 +8,8 @@
     <title>Sam Used Cars Crud page</title>
 </head>
 <body>
-<div id="header"><h1>Sam Used Cars test</h1>
-<a href="../index.html">Back to Home Page</a>
-</div>
-
-    <?php require_once 'process.php'; ?>
-    <?php 
+<div id="header"><h1>Sam Used Cars</h1></div>
+    <?php require_once 'process.php'; 
         $mysqli = new mysqli($server, $username, $password, $dbname) or die(mysql_error($mysqli));
         $result = $mysqli->query("SELECT * FROM inventory");
     ?>
@@ -41,7 +37,7 @@
         <table>
             <thead>
                 <tr>
-                    <th id="#vin">VIN</th>
+                    <th id="vin">VIN</th>
                     <th id="make">Make</th>
                     <th id="model">Model</th>
                     <th id="year">Year</th>
@@ -49,15 +45,6 @@
                     <th colspan="2" id="action">Action</th>
                 </tr>
             </thead>
-
-            <?php if(isset($_SESSION['message'])): ?>
-            <div>
-                <?php
-                    echo $_SESSION['message'];
-                ?>
-            </div>
-            <?php endif ?>
-
 
         <?php 
         while ($row = $result->fetch_assoc()):
@@ -74,9 +61,5 @@
         <?php endwhile;?>
         </table>
     </div>
-    <footer>
-        <div data-include="../components/footer.html"></div>
-    </footer>
-    <script src="../scripts/htmlinclude.js"></script>
 </body>
 </html>
