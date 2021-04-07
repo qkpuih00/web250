@@ -55,8 +55,8 @@
                     <td><?php echo $row['model'];?></td>
                     <td><?php echo $row['year'];?></td>
                     <td><?php echo $row['asking_price'];?></td>
-                    <td><a href="index.php?edit=<?php echo $row['vin'];?>">Edit</a></td>
-                    <td><a href="index.php?delete=<?php echo $row['vin'];?>">Delete</a></td>
+                    <td><a href="?edit=<?php echo $row['vin'];?>">Edit</a></td>
+                    <td><a href="?delete=<?php echo $row['vin'];?>">Delete</a></td>
                 </tr>
         <?php endwhile;?>
         </table>
