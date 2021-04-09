@@ -18,5 +18,10 @@
             require_once "dynamic_process.php";
         ?>
     </div>
+
+    <footer>
+        <div data-include="components/footer.html"></div>
+    </footer>
+    <script src="../scripts/htmlinclude.js"></script>
 </body>
 </html>
