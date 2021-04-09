@@ -22,6 +22,6 @@
     <footer>
         <div data-include="components/footer.html"></div>
     </footer>
-    <script src="../scripts/htmlinclude.js"></script>
+    <script src="scripts/htmlinclude.js"></script>
 </body>
 </html>
